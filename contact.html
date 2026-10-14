@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Contact & Care Intake | EverGrace Senior Care - 24/7 Support</title>
+  <meta name="description" content="Reach EverGrace Senior Care 24/7. Schedule a free in-home clinical consultation, arrange hospital discharge care, or speak with an on-call nurse now.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- PRELOADER (1.5s Animation) -->
+  <div id="preloader" class="preloader" aria-label="Loading EverGrace Senior Care">
+    <div class="preloader-content">
+      <div class="preloader-heart">
+        <div class="heart-pulse"><i class="fa-solid fa-heart"></i></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring ring-2"></div>
+      </div>
+      <div class="preloader-brand">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Care" style="height: 36px; width: auto; object-fit: contain; margin: 0 auto 6px; display: block;">
+        <span>Senior Living & Care</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-status">Preparing Compassionate Care...</div>
+    </div>
+  </div>
+
+  <!-- TOP BAR -->
+ 
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="EverGrace Home">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Senior Care Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Care Services</a>
+        <a href="blog.html" class="nav-link">Elder Health & Blog</a>
+        <a href="contact.html" class="nav-link active">Contact & Intake</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-sm btn-outline">Portal Login</a>
+        <a href="#consultation" class="btn btn-sm btn-primary">Book Consultation</a>
+      </div>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div style="margin-bottom: 24px;">
+        <a href="index.html" aria-label="EverGrace Home" style="display: inline-block;">
+          <img src="assets/images/logo_0945.webp" alt="EverGrace Senior Care Logo" class="brand-logo-img" style="height: 40px;">
+        </a>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a>
+        <a href="about.html" class="mobile-nav-link">About Us <span>&rarr;</span></a>
+        <a href="services.html" class="mobile-nav-link">Care Services <span>&rarr;</span></a>
+        <a href="blog.html" class="mobile-nav-link">Elder Health & Blog <span>&rarr;</span></a>
+        <a href="contact.html" class="mobile-nav-link active">Contact Us <span>&rarr;</span></a>
+        <a href="dashboard-client.html" class="mobile-nav-link" style="color: var(--primary);">Client Portal <span>&rarr;</span></a>
+        <a href="dashboard-admin.html" class="mobile-nav-link" style="color: var(--secondary);">Admin Portal <span>&rarr;</span></a>
+      </nav>
+    </div>
+    <div class="mobile-drawer-bottom">
+      <a href="login.html" class="btn btn-outline btn-full">Portal Login</a>
+      <a href="tel:18002273669" class="btn btn-emergency btn-full"><i class="fa-solid fa-phone"></i> Emergency SOS (24/7)</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- SECTION 1: CONTACT HERO BANNER -->
+    <section class="page-hero" id="contact-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> &gt; <span>Contact & Care Intake</span>
+        </div>
+        <div class="badge-pill badge-emergency"><i class="fa-solid fa-phone-volume"></i> 24/7 Direct Nurse Dispatch</div>
+        <h1 class="section-title">We Are Here For Your Family Every Hour</h1>
+        <p class="section-subtitle" style="max-width: 680px; margin: 0 auto;">
+          Whether you need immediate 24-hour caregiver placement following a hospital discharge or simply wish to plan ahead for a loved one, our compassionate team is standing by.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE INTAKE & CARE REQUEST FORM -->
+    <section class="section" id="consultation">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <div class="card" style="padding: 32px 24px;">
+              <div class="badge-pill"><i class="fa-solid fa-calendar-check"></i> Free In-Home Evaluation</div>
+              <h2 style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 8px;">Schedule a Complimentary Clinical Assessment</h2>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px;">
+                Complete this form and our RN Clinical Intake Director will contact you within 30 minutes to discuss your loved one’s care needs.
+              </p>
+
+              <form id="careIntakeForm" action="404.html" method="GET" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                <div class="grid-2" style="margin-bottom: 16px;">
+                  <div class="form-group">
+                    <label for="contactName">Your Full Name *</label>
+                    <input type="text" id="contactName" class="form-control" placeholder="e.g. Sarah Vance" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPhone">Phone Number *</label>
+                    <input type="tel" id="contactPhone" class="form-control" placeholder="(555) 000-0000" required>
+                  </div>
+                </div>
+
+                <div class="grid-2" style="margin-bottom: 16px;">
+                  <div class="form-group">
+                    <label for="contactEmail">Email Address *</label>
+                    <input type="email" id="contactEmail" class="form-control" placeholder="sarah@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="relationship">Relationship to Senior</label>
+                    <select id="relationship" class="form-control">
+                      <option value="daughter">Daughter / Son</option>
+                      <option value="spouse">Spouse / Partner</option>
+                      <option value="self">I am the Senior</option>
+                      <option value="guardian">Legal Guardian / Social Worker</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid-2" style="margin-bottom: 16px;">
+                  <div class="form-group">
+                    <label for="serviceNeeded">Care Service Needed *</label>
+                    <select id="serviceNeeded" class="form-control" required>
+                      <option value="inhome">24/7 In-Home Nursing</option>
+                      <option value="memory">Alzheimer's / Dementia Care</option>
+                      <option value="companion">Companionship & Personal Care</option>
+                      <option value="rehab">Post-Hospital Rehabilitation</option>
+                      <option value="respite">Short-Term Respite Relief</option>
+                      <option value="livein">Full-Time Live-In Care</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="startDate">Desired Start Date</label>
+                    <input type="date" id="startDate" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <label for="careNotes">Tell us about your loved one (current mobility, medications, symptoms):</label>
+                  <textarea id="careNotes" class="form-control" rows="3" placeholder="e.g. Mom is recovering from a fall, forgets her evening medications, and needs gentle mobility support..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full btn-lg"><i class="fa-solid fa-calendar-check"></i> Confirm Free Assessment Request</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- SECTION 3: DIRECT CONTACT CHANNELS -->
+          <div>
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+              <div class="contact-info-card">
+                <div class="contact-info-icon" style="background-color: var(--emergency-light); color: var(--emergency);"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 1rem; display: block;">24/7 Emergency Care Line</strong>
+                  <div style="font-size: 1.15rem; font-weight: 800; color: var(--emergency); margin: 2px 0;">1-800-CARE-NOW</div>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">Available 24 hours a day, 365 days a year for urgent caregiver placement and medical dispatch.</p>
+                </div>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 1rem; display: block;">Admissions & Care Coordination</strong>
+                  <div style="font-size: 0.95rem; font-weight: 700; color: var(--primary); margin: 2px 0;">admissions@evergracecare.com</div>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">Inquiries typically answered within 20 minutes during business hours.</p>
+                </div>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fa-solid fa-comments"></i></div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 1rem; display: block;">Family WhatsApp & SMS Help</strong>
+                  <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin: 2px 0;">+1 (555) 234-8990</div>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">Direct instant chat for quick questions on pricing and caregiver availability.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Headquarters Image & Details -->
+            <div class="card" style="padding: 16px;">
+              <div class="card-image-top" style="margin-bottom: 12px;">
+                <img src="assets/images/contact-building.webp" alt="EverGrace Care Headquarters Building" width="550" height="343" loading="lazy">
+              </div>
+              <strong style="color: var(--secondary); display: block; font-size: 0.95rem;">Central Healthcare Campus</strong>
+              <p style="font-size: 0.825rem; color: var(--text-muted); margin: 4px 0;">742 Evergreen Terrace, Suite 400, Healthcare Plaza, NY 10001</p>
+              <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700;">Open Monday–Sunday: 08:00 AM – 08:00 PM (Walk-ins welcome)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CARE CENTERS & COVERAGE LOCATIONS -->
+    <section class="section section-alt" id="coverage-areas">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill"><i class="fa-solid fa-globe"></i> Service Radius</div>
+          <h2 class="section-title">Regional Offices & Service Coverage</h2>
+          <p class="section-subtitle">Our mobile care teams provide rapid dispatch across the entire metropolitan area and surrounding suburbs.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <span class="status-pill status-active" style="margin-bottom: 8px;">Downtown & Metro</span>
+            <h3 style="font-size: 1.15rem; color: var(--secondary); margin-bottom: 6px;">Metro Central Care Hub</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">742 Evergreen Terrace, Suite 400, NY 10001</p>
+            <div style="font-size: 0.8rem; color: var(--text-main); margin-bottom: 8px;">
+              <strong>Direct Line:</strong> (212) 555-0192<br>
+              <strong>Nurse Supervisor:</strong> David Mitchell, RN
+            </div>
+            <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700;">Serving: Manhattan, Queens, Brooklyn</span>
+          </div>
+
+          <div class="card">
+            <span class="status-pill status-active" style="margin-bottom: 8px;">North County</span>
+            <h3 style="font-size: 1.15rem; color: var(--secondary); margin-bottom: 6px;">Northside Living Center</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">1200 Oakwood Blvd, White Plains, NY 10601</p>
+            <div style="font-size: 0.8rem; color: var(--text-main); margin-bottom: 8px;">
+              <strong>Direct Line:</strong> (914) 555-0144<br>
+              <strong>Nurse Supervisor:</strong> Maria Gonzalez, MS
+            </div>
+            <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700;">Serving: Westchester, Yonkers, Scarsdale</span>
+          </div>
+
+          <div class="card">
+            <span class="status-pill status-active" style="margin-bottom: 8px;">West Suburbs</span>
+            <h3 style="font-size: 1.15rem; color: var(--secondary); margin-bottom: 6px;">West Valley Clinical Annex</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">88 Riverdale Road, Hackensack, NJ 07601</p>
+            <div style="font-size: 0.8rem; color: var(--text-main); margin-bottom: 8px;">
+              <strong>Direct Line:</strong> (201) 555-0188<br>
+              <strong>Physical Therapist:</strong> Robert Chen, DPT
+            </div>
+            <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700;">Serving: Bergen County, Paramus, Fort Lee</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SCHEDULE FREE IN-HOME VISIT TIME SLOT -->
+    <section class="section" id="slot-picker">
+      <div class="container">
+        <div class="assessment-finder-box" style="background: linear-gradient(135deg, #0f766e, var(--secondary));">
+          <div style="text-align: center; max-width: 650px; margin: 0 auto 24px;">
+            <span class="badge-pill badge-accent"><i class="fa-solid fa-clock"></i> Fast Booking</span>
+            <h2 style="font-size: clamp(1.4rem, 3vw, 2rem); color: #ffffff;">Reserve an RN Home Consultation Time</h2>
+            <p style="color: #cbd5e1; font-size: 0.95rem;">Pick your preferred day and our clinical coordinator will arrive with a customized health assessment kit.</p>
+          </div>
+
+          <form action="404.html" method="GET" onsubmit="event.preventDefault(); window.location.href='404.html';" class="finder-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="form-group">
+              <label for="slotDate" style="color: #ffffff;">Preferred Date:</label>
+              <input type="date" id="slotDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="slotTime" style="color: #ffffff;">Preferred Time Window:</label>
+              <select id="slotTime" class="form-control">
+                <option value="morning">Morning (09:00 AM - 12:00 PM)</option>
+                <option value="afternoon">Afternoon (01:00 PM - 04:00 PM)</option>
+                <option value="evening">Evening (05:00 PM - 07:00 PM)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="slotLocation" style="color: #ffffff;">Meeting Location:</label>
+              <select id="slotLocation" class="form-control">
+                <option value="home">At Senior's Residence</option>
+                <option value="hospital">At Hospital / Rehab Facility</option>
+                <option value="office">At EverGrace Headquarters</option>
+                <option value="video">Virtual Telehealth Video Call</option>
+              </select>
+            </div>
+            <div class="form-group" style="display: flex; align-items: flex-end;">
+              <button type="submit" class="btn btn-accent btn-full" style="padding: 12px;">Lock In Consultation &rarr;</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: INTAKE & ADMISSIONS FAQS -->
+    <section class="section section-alt" id="intake-faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill"><i class="fa-solid fa-circle-question"></i> Common Intake Questions</div>
+          <h2 class="section-title">What to Expect During Your Initial Contact</h2>
+          <p class="section-subtitle">Straight answers to clear up any hesitation or uncertainty.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>Is there any cost or commitment for the in-home assessment?</span>
+              <span class="faq-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our initial clinical in-home evaluation is 100% complimentary and carries zero obligation. We evaluate your parent's home safety, medical history, and daily needs to present you with a tailored plan.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What if my mother needs care starting tonight?</span>
+              <span class="faq-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Call our emergency dispatch hotline at <strong>1-800-CARE-NOW</strong> immediately. We have on-duty Certified Nursing Assistants and Registered Nurses on standby 24/7 for same-day emergency placements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can we meet the caregiver before services begin?</span>
+              <span class="faq-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, absolutely. We organize a face-to-face introduction meeting with the recommended caregiver. If your family feels the chemistry isn't an ideal match, we introduce another qualified candidate right away.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CAREGIVER CAREER APPLICATION FORM -->
+    <section class="section" id="careers">
+      <div class="container">
+        <div class="split-content">
+          <div>
+            <div class="badge-pill badge-success"><i class="fa-solid fa-briefcase"></i> We're Hiring</div>
+            <h2 class="section-title">Join Our Award-Winning Caregiving Family</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+              Are you a compassionate CNA, HHA, LPN, or RN who loves elder care? We offer industry-leading compensation ($22–$36/hr for CNAs, $48–$65/hr for RNs), health & dental insurance, 401(k) matching, paid CEUs, and respectful supportive managers.
+            </p>
+
+            <form action="404.html" method="GET" onsubmit="event.preventDefault(); window.location.href='404.html';" style="display: flex; flex-direction: column; gap: 14px;">
+              <div class="grid-2">
+                <input type="text" placeholder="Your Full Name" class="form-control" required>
+                <input type="tel" placeholder="Phone Number" class="form-control" required>
+              </div>
+              <div class="grid-2">
+                <input type="email" placeholder="Email Address" class="form-control" required>
+                <select class="form-control" required>
+                  <option value="">Select Certification</option>
+                  <option value="cna">CNA (Certified Nursing Assistant)</option>
+                  <option value="hha">HHA (Home Health Aide)</option>
+                  <option value="lpn">LPN (Licensed Practical Nurse)</option>
+                  <option value="rn">RN (Registered Nurse)</option>
+                  <option value="companion">Companion Caregiver</option>
+                </select>
+              </div>
+              <input type="text" placeholder="Years of Geriatric Care Experience" class="form-control">
+              <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Submit Quick Application &rarr;</button>
+            </form>
+          </div>
+
+          <div class="story-media">
+            <img src="assets/images/team-nurse1.webp" alt="Smiling EverGrace nurse team member" width="550" height="412" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: IMMEDIATE HOSPITAL DISCHARGE CRISIS DISPATCH BANNER -->
+    <section class="section section-cream" id="emergency-banner">
+      <div class="container">
+        <div class="cta-banner" style="background: linear-gradient(135deg, #b91c1c, #991b1b);">
+          <span class="badge-pill" style="background: #ffffff; color: #b91c1c;"><i class="fa-solid fa-triangle-exclamation"></i> Urgent Hospital Discharge?</span>
+          <h2>Don't Wait for an Empty Bed Crisis at Home</h2>
+          <p>Discharging from the hospital today? Our transitional care nurses coordinate directly with hospital discharge social workers, setup medical equipment, and greet your loved one at the door.</p>
+          <div class="cta-banner-buttons">
+            <a href="tel:18002273669" class="btn btn-lg btn-accent" style="background: #ffffff; color: #b91c1c; font-weight: 800;"><i class="fa-solid fa-phone"></i> Call Direct Hospital Hotline: 1-800-CARE-NOW</a>
+            <a href="#consultation" class="btn btn-lg btn-outline" style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.4);"><i class="fa-solid fa-phone-flip"></i> Request Immediate Callback</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-brand" aria-label="Home" style="display: inline-block; margin-bottom: 16px;">
+            <img src="assets/images/logo_0945.webp" alt="Stackly Senior Care Logo" class="footer-logo-img">
+          </a>
+          <p style="margin-bottom: 20px; line-height: 1.6;">Dedicated to elevating quality of life for seniors and offering peace of mind to their families through licensed clinical care and heartfelt companionship.</p>
+          <div class="footer-social-links" style="display: flex; gap: 12px;">
+            <a href="404.html" aria-label="Facebook" class="footer-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="LinkedIn" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" aria-label="Instagram" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Care Programs</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Specialized Care</h4>
+          <ul class="footer-links">
+            <li><a href="404.html">24/7 In-Home Nursing</a></li>
+            <li><a href="404.html">Dementia & Memory Care</a></li>
+            <li><a href="404.html">Companion & Homemaking</a></li>
+            <li><a href="404.html">Physical Rehabilitation</a></li>
+            <li><a href="404.html">Respite Care for Families</a></li>
+            <li><a href="404.html">Palliative & Hospice Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Location</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i><span>Salem Stackly Office</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i><span><a href="tel:+919876543210" style="color: #cbd5e1;">+91 9876543210</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i><span><a href="mailto:info@stackly.com" style="color: #cbd5e1;">info@stackly.com</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Senior Care LLC. All rights reserved. Licensed State Healthcare Agency.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">HIPAA Compliance</a>
+          <a href="404.html">Terms of Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

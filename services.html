@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Care Services | EverGrace Senior Care - In-Home, Memory, & Respite Care</title>
+  <meta name="description" content="Explore EverGrace's 6 comprehensive senior care programs: In-home skilled nursing, dementia & Alzheimer's care, personal companion care, and rehabilitation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- PRELOADER (1.5s Animation) -->
+  <div id="preloader" class="preloader" aria-label="Loading EverGrace Senior Care">
+    <div class="preloader-content">
+      <div class="preloader-heart">
+        <div class="heart-pulse"><i class="fa-solid fa-heart"></i></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring ring-2"></div>
+      </div>
+      <div class="preloader-brand">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Care" style="height: 36px; width: auto; object-fit: contain; margin: 0 auto 6px; display: block;">
+        <span>Senior Living & Care</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-status">Preparing Compassionate Care...</div>
+    </div>
+  </div>
+
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="EverGrace Home">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Senior Care Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link active">Care Services</a>
+        <a href="blog.html" class="nav-link">Elder Health & Blog</a>
+        <a href="contact.html" class="nav-link">Contact & Intake</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-sm btn-outline">Portal Login</a>
+        <a href="contact.html#consultation" class="btn btn-sm btn-primary">Book Consultation</a>
+      </div>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div style="margin-bottom: 24px;">
+        <a href="index.html" aria-label="EverGrace Home" style="display: inline-block;">
+          <img src="assets/images/logo_0945.webp" alt="EverGrace Senior Care Logo" class="brand-logo-img" style="height: 40px;">
+        </a>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a>
+        <a href="about.html" class="mobile-nav-link">About Us <span>&rarr;</span></a>
+        <a href="services.html" class="mobile-nav-link active">Care Services <span>&rarr;</span></a>
+        <a href="blog.html" class="mobile-nav-link">Elder Health & Blog <span>&rarr;</span></a>
+        <a href="contact.html" class="mobile-nav-link">Contact Us <span>&rarr;</span></a>
+        <a href="dashboard-client.html" class="mobile-nav-link" style="color: var(--primary);">Client Portal <span>&rarr;</span></a>
+        <a href="dashboard-admin.html" class="mobile-nav-link" style="color: var(--secondary);">Admin Portal <span>&rarr;</span></a>
+      </nav>
+    </div>
+    <div class="mobile-drawer-bottom">
+      <a href="login.html" class="btn btn-outline btn-full">Portal Login</a>
+      <a href="tel:18002273669" class="btn btn-emergency btn-full"><i class="fa-solid fa-phone"></i> Emergency SOS (24/7)</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- SECTION 1: SERVICES HERO BANNER -->
+    <section class="page-hero" id="services-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> &gt; <span>Care Services</span>
+        </div>
+        <div class="badge-pill"><i class="fa-solid fa-award"></i> Tailored Elder Programs</div>
+        <h1 class="section-title">Compassionate Care for Every Stage of Aging</h1>
+        <p class="section-subtitle" style="max-width: 680px; margin: 0 auto;">
+          Whether your loved one requires occasional companionship, daily personal assistance, or 24/7 skilled clinical nursing, we tailor our programs to their specific physical and emotional needs.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: 6 CORE CARE PROGRAMS GRID -->
+    <section class="section" id="care-programs">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill"><i class="fa-solid fa-heart"></i> What We Offer</div>
+          <h2 class="section-title">Specialized Clinical & In-Home Programs</h2>
+          <p class="section-subtitle">Every service is supervised by a licensed Registered Nurse with comprehensive family updates.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Program 1 -->
+          <article class="card service-card" id="in-home">
+            <div class="card-image-top">
+              <img src="assets/images/service-inhome.webp" alt="In-home nursing care" width="550" height="343" loading="eager">
+            </div>
+            <span class="status-pill status-active" style="align-self: flex-start; margin-bottom: 8px;">24/7 Available</span>
+            <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">24/7 Skilled In-Home Nursing</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Administered by Licensed Practical Nurses (LPN) and RNs. Covers wound care, IV therapy, diabetes management, catheter care, post-surgical recovery, and chronic disease vitals tracking.
+            </p>
+            <div class="service-card-meta">
+              <div class="service-price">$32 <span>/ hr</span></div>
+              <a href="contact.html?plan=InHome" class="btn btn-sm btn-primary">Select Program</a>
+            </div>
+          </article>
+
+          <!-- Program 2 -->
+          <article class="card service-card" id="memory">
+            <div class="card-image-top">
+              <img src="assets/images/service-memory.webp" alt="Alzheimer and Memory Care" width="550" height="343" loading="eager">
+            </div>
+            <span class="status-pill status-pending" style="align-self: flex-start; margin-bottom: 8px;">Dementia Certified</span>
+            <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">Alzheimer's & Memory Care</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Evidence-based cognitive retention programs, structured predictable daily routines, wander reduction protocols, gentle sensory music therapy, and compassionate redirection.
+            </p>
+            <div class="service-card-meta">
+              <div class="service-price">$36 <span>/ hr</span></div>
+              <a href="contact.html?plan=Memory" class="btn btn-sm btn-primary">Select Program</a>
+            </div>
+          </article>
+
+          <!-- Program 3 -->
+          <article class="card service-card" id="companion">
+            <div class="card-image-top">
+              <img src="assets/images/service-companion.webp" alt="Elderly companion caregiver" width="550" height="343" loading="eager">
+            </div>
+            <span class="status-pill status-completed" style="align-self: flex-start; margin-bottom: 8px;">Most Popular</span>
+            <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">Companion & Personal Care</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Bathing, grooming, dressing, wholesome chef-guided meals, light housekeeping, grocery shopping, doctor appointment transport, and joyful companionship.
+            </p>
+            <div class="service-card-meta">
+              <div class="service-price">$26 <span>/ hr</span></div>
+              <a href="contact.html?plan=Companion" class="btn btn-sm btn-primary">Select Program</a>
+            </div>
+          </article>
+
+          <!-- Program 4 -->
+          <article class="card service-card" id="rehab">
+            <div class="card-image-top">
+              <img src="assets/images/service-rehab.webp" alt="Physical rehabilitation exercise" width="550" height="343" loading="lazy">
+            </div>
+            <span class="status-pill status-active" style="align-self: flex-start; margin-bottom: 8px;">Physical Therapy</span>
+            <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">Post-Hospital Rehabilitation</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Designed to prevent hospital readmissions. Mobility and balance training, post-stroke recovery, joint replacement exercises, and safe transfer technique guidance.
+            </p>
+            <div class="service-card-meta">
+              <div class="service-price">$30 <span>/ hr</span></div>
+              <a href="contact.html?plan=Rehab" class="btn btn-sm btn-primary">Select Program</a>
+            </div>
+          </article>
+
+          <!-- Program 5 -->
+          <article class="card service-card" id="palliative">
+            <div class="card-image-top">
+              <img src="assets/images/service-palliative.webp" alt="Palliative and comfort care" width="550" height="343" loading="lazy">
+            </div>
+            <span class="status-pill status-urgent" style="align-self: flex-start; margin-bottom: 8px;">Palliative Support</span>
+            <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">Palliative & Hospice Comfort</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Pain management, gentle skin repositioning, emotional and spiritual counseling, and 24/7 empathetic presence for both the patient and immediate family members.
+            </p>
+            <div class="service-card-meta">
+              <div class="service-price">$38 <span>/ hr</span></div>
+              <a href="contact.html?plan=Palliative" class="btn btn-sm btn-primary">Select Program</a>
+            </div>
+          </article>
+
+          <!-- Program 6 -->
+          <article class="card service-card" id="respite">
+            <div class="card-image-top">
+              <img src="assets/images/service-respite.webp" alt="Respite care for family relief" width="550" height="343" loading="lazy">
+            </div>
+            <span class="status-pill status-completed" style="align-self: flex-start; margin-bottom: 8px;">Flexible Hours</span>
+            <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">Respite Care for Family</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Take a well-deserved vacation, attend personal events, or rest knowing your loved one is in trustworthy, nurturing hands for hours, days, or weeks at a time.
+            </p>
+            <div class="service-card-meta">
+              <div class="service-price">$28 <span>/ hr</span></div>
+              <a href="contact.html?plan=Respite" class="btn btn-sm btn-primary">Select Program</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DAILY ROUTINE & CLINICAL CARE SCOPE -->
+    <section class="section section-alt" id="daily-routine">
+      <div class="container">
+        <div class="split-content">
+          <div>
+            <div class="badge-pill"><i class="fa-solid fa-clock"></i> Predictable Routine</div>
+            <h2 class="section-title">A Day in the Life of an EverGrace Senior</h2>
+            <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">
+              Routine brings comfort, dignity, and cognitive stability. Here is how our caregivers nurture health and happiness throughout a typical day:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="background: var(--primary-light); color: var(--primary); font-weight: 800; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; white-space: nowrap;">08:00 AM</div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 0.95rem;">Morning Wake-Up, Hygiene & Vitals</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Assisted bathing, oral care, medication administration, and recording of blood pressure and pulse.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="background: var(--primary-light); color: var(--primary); font-weight: 800; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; white-space: nowrap;">12:00 PM</div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 0.95rem;">Nutritious Lunch & Cognitive Enrichment</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Freshly prepared diabetic/heart-healthy meals followed by crossword puzzles, memories conversation, or light walking.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="background: var(--primary-light); color: var(--primary); font-weight: 800; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; white-space: nowrap;">03:30 PM</div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 0.95rem;">Physical Therapy & Outdoor Garden Time</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Seated mobility exercises, hydration check, and enjoying natural sunlight in the fresh air.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="background: var(--primary-light); color: var(--primary); font-weight: 800; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; white-space: nowrap;">07:30 PM</div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 0.95rem;">Evening Wind-Down & Night Safety Protocol</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Comfortable dressing, evening medication, night-light checks, and fall-safe bedroom setup.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-media">
+            <img src="assets/images/service-daily.webp" alt="Caregiver assisting senior with nutritious breakfast" width="550" height="412" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: 4-STEP PERSONALIZED CARE PROCESS -->
+    <section class="section" id="care-process">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill"><i class="fa-solid fa-rocket"></i> Getting Started</div>
+          <h2 class="section-title">Our 4-Step Personalized Care Journey</h2>
+          <p class="section-subtitle">We remove the stress and confusion from setting up senior care with a seamless onboarding experience.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card" style="text-align: center; position: relative;">
+            <div style="position: absolute; top: 12px; left: 16px; font-weight: 900; color: #e2e8f0; font-size: 2rem;">01</div>
+            <div style="font-size: 2.2rem; margin: 12px 0;"><i class="fa-solid fa-phone"></i></div>
+            <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 6px;">Free Phone Consultation</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Speak with our intake coordinator to discuss your loved one's challenges, schedule requirements, and location.</p>
+          </div>
+
+          <div class="card" style="text-align: center; position: relative;">
+            <div style="position: absolute; top: 12px; left: 16px; font-weight: 900; color: #e2e8f0; font-size: 2rem;">02</div>
+            <div style="font-size: 2.2rem; margin: 12px 0;"><i class="fa-solid fa-stethoscope"></i></div>
+            <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 6px;">In-Home RN Assessment</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Our Registered Nurse visits the home, reviews physician notes, evaluates fall hazards, and drafts a custom care plan.</p>
+          </div>
+
+          <div class="card" style="text-align: center; position: relative;">
+            <div style="position: absolute; top: 12px; left: 16px; font-weight: 900; color: #e2e8f0; font-size: 2rem;">03</div>
+            <div style="font-size: 2.2rem; margin: 12px 0;"><i class="fa-solid fa-handshake"></i></div>
+            <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 6px;">Caregiver Hand-Match</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">We match with a caregiver matching your senior's temperament and cultural background with an in-person introduction.</p>
+          </div>
+
+          <div class="card" style="text-align: center; position: relative;">
+            <div style="position: absolute; top: 12px; left: 16px; font-weight: 900; color: #e2e8f0; font-size: 2rem;">04</div>
+            <div style="font-size: 2.2rem; margin: 12px 0;"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 6px;">Care Begins & Live App</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Care starts smoothly with live portal updates, 30-day clinical reviews, and our 24/7 on-call nurse helpline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SMART SAFETY & ASSISTIVE TECHNOLOGY -->
+    <section class="section section-alt" id="smart-tech">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill"><i class="fa-solid fa-laptop-medical"></i> Senior Health Tech</div>
+          <h2 class="section-title">Modern Technology Keeping Seniors Safe</h2>
+          <p class="section-subtitle">We combine heartfelt human touch with intelligent monitoring so you're always connected.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div>
+              <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 4px;">Smart Fall Radar Sensors</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Privacy-first non-camera sensors that detect sudden falls or irregular bedroom stillness and dispatch instant caregiver alerts.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-pills"></i></div>
+            <div>
+              <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 4px;">Automated Dispenser Logs</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Double-verified medication schedules prevent dangerous double-dosing or missed heart/diabetes prescriptions.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div>
+              <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 4px;">Real-Time Vitals Portal</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Blood pressure, glucose readings, and pulse oxygen automatically synchronize to our encrypted client portal for family viewing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: TRANSPARENT PRICING & INSURANCE GUIDE -->
+    <section class="section" id="pricing-insurance">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill badge-accent"><i class="fa-solid fa-dollar-sign"></i> Transparent Care Tiers</div>
+          <h2 class="section-title">Simple, Honest Care Pricing Plans</h2>
+          <p class="section-subtitle">No hidden administrative fees, zero long-term cancellation penalties. Tailored to your exact budget.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="pricing-card">
+            <h3 style="font-size: 1.3rem; color: var(--secondary); margin-bottom: 4px;">Essential Companion</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Ideal for independent seniors needing socialization and household help.</p>
+            <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin-bottom: 16px;">
+              $26 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/ hour</span>
+            </div>
+            <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-main); margin-bottom: 24px; flex-grow: 1;">
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Companionship & Meal Preparation</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Medication Reminders</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Light Housekeeping & Laundry</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Doctor & Shopping Transportation</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Family App Daily Logs</li>
+            </ul>
+            <a href="404.html" class="btn btn-outline btn-full">Get Started</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-badge">MOST REQUESTED</div>
+            <h3 style="font-size: 1.3rem; color: var(--secondary); margin-bottom: 4px;">Enhanced Clinical Care</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Comprehensive physical assistance, hygiene, and nursing oversight.</p>
+            <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin-bottom: 16px;">
+              $32 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/ hour</span>
+            </div>
+            <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-main); margin-bottom: 24px; flex-grow: 1;">
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Full Bathing, Toileting & Dressing</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Transfer & Mobility Fall Assistance</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Medication Dispensation by CNA/LPN</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Bi-Weekly RN Clinical Review</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> 24/7 Rapid Emergency Response</li>
+            </ul>
+            <a href="contact.html?plan=ClinicalPlan" class="btn btn-primary btn-full">Choose Enhanced Care</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3 style="font-size: 1.3rem; color: var(--secondary); margin-bottom: 4px;">24/7 Total Live-In Care</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Continuous round-the-clock peace of mind for high-acuity seniors.</p>
+            <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin-bottom: 16px;">
+              $295 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/ day flat</span>
+            </div>
+            <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-main); margin-bottom: 24px; flex-grow: 1;">
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Dedicated 2-Caregiver Rotation Team</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Constant Nighttime Fall Monitoring</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Dementia De-Escalation Protocol</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> Weekly In-Home RN Doctor Coordination</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 6px;"></i> All Meals & Daily Activities Included</li>
+            </ul>
+            <a href="404.html" class="btn btn-outline btn-full">Inquire for Live-In</a>
+          </div>
+        </div>
+
+        <div style="background-color: #f1f5f9; padding: 20px; border-radius: 12px; margin-top: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: gap; gap: 16px;">
+          <div>
+            <strong style="color: var(--secondary);">Have Long-Term Care Insurance or VA Benefits?</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">We work directly with Genworth, Mutual of Omaha, MetLife, and VA Aid & Attendance to file claims on your behalf.</p>
+          </div>
+          <a href="404.html" class="btn btn-sm btn-accent" style="white-space: nowrap;">Free Insurance Check</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: SERVICE SPECIFIC REVIEWS & CASE STUDIES -->
+    <section class="section section-alt" id="service-reviews">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill"><i class="fa-solid fa-star"></i> Clinical Case Study</div>
+          <h2 class="section-title">Real Outcomes: Restoring Vitality</h2>
+          <p class="section-subtitle">See how our specialized care plans made a measurable difference for families facing tough health diagnoses.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card" style="padding: 28px;">
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px;">
+              <div class="reviewer-avatar">
+                <img src="assets/images/avatar-client.webp" alt="Client Family Avatar" width="48" height="48" loading="lazy">
+              </div>
+              <div>
+                <strong style="color: var(--secondary); font-size: 1rem;">Case: Alzheimer's Agitation De-escalation</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Client: Harold P. (Age 84) &bull; Caregiver: Maria G.</span>
+              </div>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-main); line-height: 1.6; margin-bottom: 14px;">
+              "My father experienced severe sundowning agitation every evening at 5 PM. EverGrace brought in Maria, who introduced gentle music therapy and familiar tactile puzzle boards. Within 3 weeks, his evening anxiety dropped by 80%, and he sleeps soundly through the night."
+            </p>
+            <span class="status-pill status-active"><i class="fa-solid fa-check"></i> Memory Program Outcome Verified</span>
+          </div>
+
+          <div class="card" style="padding: 28px;">
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px;">
+              <div class="reviewer-avatar">
+                <img src="assets/images/avatar-senior.webp" alt="Client Family Avatar" width="48" height="48" loading="lazy">
+              </div>
+              <div>
+                <strong style="color: var(--secondary); font-size: 1rem;">Case: Full Mobility Recovery Post-Hip Fracture</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Client: Margaret T. (Age 81) &bull; Therapist: Robert Chen</span>
+              </div>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-main); line-height: 1.6; margin-bottom: 14px;">
+              "After discharging from the hospital, mom was terrified of walking and risked becoming wheelchair-bound. Robert's customized gait exercises and daily caregiver encouragement gave her the confidence to walk in her garden unassisted by week 6."
+            </p>
+            <span class="status-pill status-active"><i class="fa-solid fa-check"></i> Rehab Program Outcome Verified</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: INSTANT CARE ASSESSMENT BOOKING CTA -->
+    <section class="section section-cream" id="services-cta">
+      <div class="container">
+        <div class="cta-banner">
+          <span class="badge-pill badge-accent"><i class="fa-solid fa-compass"></i> Take the Next Step</span>
+          <h2>Ready to Build a Tailored Care Plan for Your Loved One?</h2>
+          <p>Book a free 45-minute in-home clinical evaluation with our Nurse Director. No contracts, zero high-pressure sales — just genuine medical advice.</p>
+          <div class="cta-banner-buttons">
+            <a href="contact.html#consultation" class="btn btn-lg btn-accent"><i class="fa-solid fa-circle-check"></i> Schedule Free Evaluation</a>
+            <a href="tel:18002273669" class="btn btn-lg btn-outline" style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.3);"><i class="fa-solid fa-phone"></i> Speak With Nurse On Call</a>
+          </div>
+
+          <form action="404.html" method="GET" onsubmit="event.preventDefault(); window.location.href='404.html';" style="max-width: 580px; margin: 24px auto 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+            <input type="text" placeholder="Your Name" class="form-control" style="flex: 1; min-width: 180px;" required>
+            <input type="tel" placeholder="Phone Number" class="form-control" style="flex: 1; min-width: 180px;" required>
+            <button type="submit" class="btn btn-accent" style="white-space: nowrap;">Request Care Callback &rarr;</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-brand" aria-label="Home" style="display: inline-block; margin-bottom: 16px;">
+            <img src="assets/images/logo_0945.webp" alt="Stackly Senior Care Logo" class="footer-logo-img">
+          </a>
+          <p style="margin-bottom: 20px; line-height: 1.6;">Dedicated to elevating quality of life for seniors and offering peace of mind to their families through licensed clinical care and heartfelt companionship.</p>
+          <div class="footer-social-links" style="display: flex; gap: 12px;">
+            <a href="404.html" aria-label="Facebook" class="footer-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="LinkedIn" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" aria-label="Instagram" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Care Programs</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Specialized Care</h4>
+          <ul class="footer-links">
+            <li><a href="404.html">24/7 In-Home Nursing</a></li>
+            <li><a href="404.html">Dementia & Memory Care</a></li>
+            <li><a href="404.html">Companion & Homemaking</a></li>
+            <li><a href="404.html">Physical Rehabilitation</a></li>
+            <li><a href="404.html">Respite Care for Families</a></li>
+            <li><a href="404.html">Palliative & Hospice Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Location</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i><span>Salem Stackly Office</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i><span><a href="tel:+919876543210" style="color: #cbd5e1;">+91 9876543210</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i><span><a href="mailto:info@stackly.com" style="color: #cbd5e1;">info@stackly.com</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Senior Care LLC. All rights reserved. Licensed State Healthcare Agency.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">HIPAA Compliance</a>
+          <a href="404.html">Terms of Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Admin & Clinical Dispatch Console | EverGrace Senior Care</title>
+  <meta name="description" content="Administrative control center for senior care operations, live caregiver GPS dispatch, patient intake, and clinical safety monitors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- PRELOADER (1.5s Animation) -->
+  <div id="preloader" class="preloader" aria-label="Loading EverGrace Senior Care">
+    <div class="preloader-content">
+      <div class="preloader-heart">
+        <div class="heart-pulse"><i class="fa-solid fa-heart"></i></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring ring-2"></div>
+      </div>
+      <div class="preloader-brand">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Care" style="height: 36px; width: auto; object-fit: contain; margin: 0 auto 6px; display: block;">
+        <span>Senior Living & Care</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-status">Initializing Admin Operations Console...</div>
+    </div>
+  </div>
+
+  <!-- MOBILE OVERLAY FOR SIDEBAR -->
+  <div class="mobile-drawer-overlay" id="dashOverlay"></div>
+
+  <div class="dashboard-layout">
+    <!-- ADMIN SIDEBAR -->
+    <aside class="dashboard-sidebar" id="dashSidebar" aria-label="Admin Dashboard Navigation">
+      <div class="dashboard-sidebar-header">
+        <a href="index.html" class="brand-logo" aria-label="EverGrace Home" style="color: #ffffff;">
+          <img src="assets/images/logo_0945.webp" alt="EverGrace Care Logo" class="dashboard-logo-img">
+        </a>
+      </div>
+
+      <!-- Administrator Profile Badge -->
+      <div style="padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 12px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 2px solid #38bdf8; flex-shrink: 0;">
+          <img src="assets/images/avatar-admin.webp" alt="Dr Aris Thorne Chief Administrator" width="44" height="44" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="min-width: 0;">
+          <strong style="color: #ffffff; font-size: 0.95rem; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Dr. Aris Thorne</strong>
+          <span style="color: #94a3b8; font-size: 0.75rem;">Clinical Admin &bull; All Hubs</span>
+        </div>
+      </div>
+
+      <nav class="dashboard-nav">
+        <a href="#overview" class="dashboard-nav-item active">
+          <span><i class="fa-solid fa-chart-pie"></i></span> <span>Dispatch Center</span>
+        </a>
+        <a href="#dispatch" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-truck-medical"></i></span> <span>Live Caregivers (46)</span>
+        </a>
+        <a href="#intake" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-clipboard-list"></i></span> <span>Client Intake (7)</span>
+        </a>
+        <a href="#alerts" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-triangle-exclamation"></i></span> <span>Safety Alerts (2)</span>
+        </a>
+        <a href="404.html" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-users"></i></span> <span>Senior Directory</span>
+        </a>
+        <a href="404.html" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-dollar-sign"></i></span> <span>Billing & Payroll</span>
+        </a>
+        <a href="dashboard-client.html" class="dashboard-nav-item" style="color: #38bdf8;">
+          <span><i class="fa-solid fa-house-user"></i></span> <span>View Client Portal</span>
+        </a>
+        <a href="index.html" class="dashboard-nav-item" style="color: #cbd5e1;">
+          <span><i class="fa-solid fa-house"></i></span> <span>Public Website</span>
+        </a>
+      </nav>
+
+      <div class="dashboard-sidebar-footer">
+        <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 6px;">HIPAA System Status: <strong>Encrypted</strong></div>
+        <a href="login.html" class="btn btn-sm btn-outline btn-full" style="color: #ffffff; border-color: rgba(255,255,255,0.2);">Sign Out</a>
+      </div>
+    </aside>
+
+    <!-- ADMIN MAIN CONTENT -->
+    <div class="dashboard-main">
+      <!-- TOPBAR -->
+      <header class="dashboard-topbar">
+        <div class="dashboard-topbar-left">
+          <button class="dashboard-menu-toggle" id="dashMenuToggle" aria-label="Toggle Sidebar Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h1 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Clinical Operations & Dispatch Console</h1>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Real-time monitoring across Metro Central & Suburban hubs</span>
+          </div>
+        </div>
+
+        <div class="dashboard-topbar-right">
+          <button type="button" onclick="openModal('newIntakeModal')" class="btn btn-sm btn-primary">+ New Client Intake</button>
+          <div class="user-badge">
+            <span class="status-pill status-urgent" style="font-size: 0.75rem; cursor: pointer;" onclick="document.getElementById('alerts').scrollIntoView();"><i class="fa-solid fa-triangle-exclamation"></i> 2 Alerts</span>
+            <div class="user-avatar-small">
+              <img src="assets/images/avatar-admin.webp" alt="Admin Profile" width="38" height="38" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- BODY -->
+      <main class="dashboard-body" id="overview">
+        <!-- 4 KPI CARDS -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #e0f2fe; color: #0284c7;"><i class="fa-solid fa-users"></i></div>
+            <div>
+              <div class="kpi-stat">128</div>
+              <div class="kpi-title">Active Seniors Enrolled</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #dcfce7; color: #16a34a;"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <div class="kpi-stat">46 / 52</div>
+              <div class="kpi-title">Caregivers On Duty</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #fef3c7; color: #d97706;"><i class="fa-solid fa-file-pen"></i></div>
+            <div>
+              <div class="kpi-stat">7</div>
+              <div class="kpi-title">Pending RN Intakes</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #f1f5f9; color: var(--secondary);"><i class="fa-solid fa-dollar-sign"></i></div>
+            <div>
+              <div class="kpi-stat">$84,500</div>
+              <div class="kpi-title">Monthly Billed Hours</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE CAREGIVER DISPATCH & SHIFT TABLE -->
+        <div class="card" id="dispatch" style="margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Live Caregiver Shift Dispatch</h2>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Real-time GPS check-ins and shift fulfillment</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" onclick="showToast('Dispatch map refreshed: All 46 caregivers verified.')" class="btn btn-sm btn-outline"><i class="fa-solid fa-rotate"></i> Refresh GPS</button>
+              <button type="button" onclick="openModal('dispatchBackupModal')" class="btn btn-sm btn-accent"><i class="fa-solid fa-bolt"></i> Dispatch Backup RN</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Caregiver</th>
+                  <th>Assigned Senior</th>
+                  <th>Care Program</th>
+                  <th>Shift Window</th>
+                  <th>GPS / Verification</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 34px; height: 34px; border-radius: 50%; overflow: hidden;">
+                        <img src="assets/images/avatar-caregiver.webp" alt="Emma Watson" width="34" height="34" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div>
+                        <strong>Emma Watson, CNA</strong>
+                        <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">CNA #883921</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <strong>Eleanor Vance (82)</strong>
+                    <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">742 Evergreen Terrace</span>
+                  </td>
+                  <td><span class="status-pill status-completed">Memory & In-Home</span></td>
+                  <td>08:30 AM – 04:30 PM</td>
+                  <td><span class="status-pill status-active"><i class="fa-solid fa-circle-dot"></i> On-Site (08:30 AM)</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline action-dispatch-btn">Check In</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 34px; height: 34px; border-radius: 50%; overflow: hidden;">
+                        <img src="assets/images/team-nurse2.webp" alt="Maria Gonzalez" width="34" height="34" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div>
+                        <strong>Maria Gonzalez, MS</strong>
+                        <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">CDP #994012</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <strong>Arthur Henderson (87)</strong>
+                    <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">310 Riverside Drive</span>
+                  </td>
+                  <td><span class="status-pill status-pending">Alzheimer's Special</span></td>
+                  <td>09:00 AM – 05:00 PM</td>
+                  <td><span class="status-pill status-active"><i class="fa-solid fa-circle-dot"></i> On-Site (08:55 AM)</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline action-dispatch-btn">Check In</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 34px; height: 34px; border-radius: 50%; overflow: hidden;">
+                        <img src="assets/images/team-therapist.webp" alt="Robert Chen" width="34" height="34" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div>
+                        <strong>Robert Chen, DPT</strong>
+                        <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">DPT #441092</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <strong>Harold Parker (84)</strong>
+                    <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">180 West End Ave</span>
+                  </td>
+                  <td><span class="status-pill status-active">Mobility Rehab</span></td>
+                  <td>10:00 AM – 02:00 PM</td>
+                  <td><span class="status-pill status-pending"><i class="fa-solid fa-hourglass-half"></i> En Route (ETA 9m)</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-primary action-dispatch-btn">Verify Arrival</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 34px; height: 34px; border-radius: 50%; overflow: hidden;">
+                        <img src="assets/images/team-nurse1.webp" alt="David Mitchell" width="34" height="34" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div>
+                        <strong>David Mitchell, BSN</strong>
+                        <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">RN #109283</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <strong>Clara Sterling (90)</strong>
+                    <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">520 Park Avenue</span>
+                  </td>
+                  <td><span class="status-pill status-urgent">Clinical RN Triage</span></td>
+                  <td>11:00 AM – 03:00 PM</td>
+                  <td><span class="status-pill status-completed"><i class="fa-solid fa-calendar-check"></i> Scheduled</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-primary action-dispatch-btn">Dispatch RN</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SPLIT ROW: NEW INTAKE REQUESTS & CLINICAL ALERTS -->
+        <div class="grid-2" style="margin-bottom: 24px;">
+          <!-- New Client Intake Requests -->
+          <div class="card" id="intake">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">New Family Intakes (7 Pending)</h2>
+              <span class="badge-pill badge-accent" style="margin: 0;">RN Triage Queue</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="padding: 12px; background: var(--bg-subtle); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <div>
+                  <strong>Senior: Evelyn Wright (Age 83)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Family: Thomas Wright &bull; Need: 24/7 Dementia & Post-Fall Care</div>
+                </div>
+                <button type="button" onclick="showToast('Assigned RN David Mitchell to perform intake assessment tomorrow at 10 AM!');" class="btn btn-sm btn-primary">Schedule RN</button>
+              </div>
+
+              <div style="padding: 12px; background: var(--bg-subtle); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <div>
+                  <strong>Senior: George Miller (Age 79)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Family: Nancy Miller &bull; Need: 4 hrs/day Companion & Meals</div>
+                </div>
+                <button type="button" onclick="showToast('Assigned Intake Coordinator to Nancy Miller.');" class="btn btn-sm btn-primary">Schedule RN</button>
+              </div>
+
+              <div style="padding: 12px; background: var(--bg-subtle); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <div>
+                  <strong>Senior: Beatrice Wong (Age 88)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Family: Kevin Wong &bull; Need: Hospital Discharge Care (Urgent)</div>
+                </div>
+                <button type="button" onclick="showToast('Urgent hospital discharge team alerted for Beatrice Wong!');" class="btn btn-sm btn-emergency">Rapid Match</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinical Quality & Safety Alert Feed -->
+          <div class="card" id="alerts">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Clinical Quality Alerts</h2>
+              <span class="badge-pill badge-emergency" style="margin: 0;">Active Attention</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="padding: 12px; border-left: 4px solid var(--emergency); background: #fef2f2; border-radius: 0 8px 8px 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: var(--emergency); font-size: 0.85rem;">Blood Pressure Threshold Flag</strong>
+                  <span style="font-size: 0.72rem; color: var(--text-muted);">09:15 AM</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-main); margin: 4px 0;">
+                  Resident <strong>Harold Parker</strong> recorded BP 148/92 mmHg (above target baseline 130/80). Caregiver notified to repeat in 30 minutes.
+                </p>
+                <button type="button" onclick="showToast('Nurse on-call dispatched message to attending physician.');" class="btn btn-sm btn-outline" style="font-size: 0.75rem; padding: 4px 10px;">Acknowledge & Notify MD</button>
+              </div>
+
+              <div style="padding: 12px; border-left: 4px solid var(--warning); background: #fffbeb; border-radius: 0 8px 8px 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #b45309; font-size: 0.85rem;">Caregiver Replacement Requested</strong>
+                  <span style="font-size: 0.72rem; color: var(--text-muted);">08:00 AM</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-main); margin: 4px 0;">
+                  Caregiver John D. requested sick leave for tomorrow's 09:00 AM shift for client <strong>Arthur Henderson</strong>.
+                </p>
+                <button type="button" onclick="showToast('Backup caregiver Lisa S. assigned to Arthur Henderson.');" class="btn btn-sm btn-accent" style="font-size: 0.75rem; padding: 4px 10px;">Dispatch Backup</button>
+              </div>
+
+              <div style="padding: 12px; border-left: 4px solid var(--success); background: #f0fdf4; border-radius: 0 8px 8px 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #166534; font-size: 0.85rem;">30-Day RN Review Completed</strong>
+                  <span style="font-size: 0.72rem; color: var(--text-muted);">Yesterday</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-main); margin: 4px 0;">
+                  Care plan for <strong>Eleanor Vance</strong> renewed by David Mitchell, RN. Cognition and gait stability scored stable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL 1: NEW CLIENT INTAKE -->
+  <div class="modal-overlay" id="newIntakeModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="color: var(--secondary); font-size: 1.2rem;"><i class="fa-solid fa-user-plus"></i> Register New Senior Intake</h3>
+        <button class="modal-close-btn" onclick="closeModal('newIntakeModal')">&times;</button>
+      </div>
+      <form data-toast="Senior intake registered! RN assigned for in-home assessment." onsubmit="closeModal('newIntakeModal');">
+        <div class="grid-2" style="margin-bottom: 12px;">
+          <div class="form-group">
+            <label>Senior's Name:</label>
+            <input type="text" class="form-control" placeholder="e.g. Martha Stewart" required>
+          </div>
+          <div class="form-group">
+            <label>Age:</label>
+            <input type="number" class="form-control" placeholder="85" required>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label>Primary Care Diagnosis:</label>
+          <select class="form-control">
+            <option>Alzheimer's / Dementia (Memory Care)</option>
+            <option>Post-Surgical Fall Rehabilitation</option>
+            <option>Congestive Heart Failure / Chronic Skilled Nursing</option>
+            <option>General Frailty / Companion Care</option>
+          </select>
+        </div>
+        <div class="grid-2" style="margin-bottom: 16px;">
+          <div class="form-group">
+            <label>Family Contact Name:</label>
+            <input type="text" class="form-control" placeholder="Robert Stewart" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Phone:</label>
+            <input type="tel" class="form-control" placeholder="(555) 123-4567" required>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="submit" class="btn btn-primary btn-full">Create Intake Profile</button>
+          <button type="button" class="btn btn-outline" onclick="closeModal('newIntakeModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 2: DISPATCH BACKUP NURSE -->
+  <div class="modal-overlay" id="dispatchBackupModal" role="dialog" aria-modal="true">
+    <div class="modal-box" style="border-top: 5px solid var(--accent);">
+      <div class="modal-header">
+        <h3 style="color: var(--secondary); font-size: 1.2rem;"><i class="fa-solid fa-bolt"></i> Urgent Caregiver / RN Dispatch</h3>
+        <button class="modal-close-btn" onclick="closeModal('dispatchBackupModal')">&times;</button>
+      </div>
+      <form data-toast="Backup caregiver dispatched immediately via SMS alert!" onsubmit="closeModal('dispatchBackupModal');">
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label>Target Senior / Location:</label>
+          <select class="form-control">
+            <option>Arthur Henderson (Riverside Drive)</option>
+            <option>Eleanor Vance (Evergreen Terrace)</option>
+            <option>Harold Parker (West End Ave)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label>Select Available On-Call Caregiver:</label>
+          <select class="form-control">
+            <option>Lisa Simpson, CNA (Standby - 12m away)</option>
+            <option>David Mitchell, BSN (Clinical Lead - 18m away)</option>
+            <option>Carlos Mendez, HHA (Standby - 25m away)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label>Reason for Urgent Dispatch:</label>
+          <input type="text" class="form-control" placeholder="e.g. Primary caregiver illness coverage" required>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="submit" class="btn btn-accent btn-full">Confirm & Notify Caregiver</button>
+          <button type="button" class="btn btn-outline" onclick="closeModal('dispatchBackupModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

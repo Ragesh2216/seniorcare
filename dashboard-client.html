@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Client & Family Portal | EverGrace Senior Care</title>
+  <meta name="description" content="Live family portal to monitor daily caregiver notes, vital signs, medication logs, schedule, and invoices.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- PRELOADER (1.5s Animation) -->
+  <div id="preloader" class="preloader" aria-label="Loading EverGrace Senior Care">
+    <div class="preloader-content">
+      <div class="preloader-heart">
+        <div class="heart-pulse"><i class="fa-solid fa-heart"></i></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring ring-2"></div>
+      </div>
+      <div class="preloader-brand">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Care" style="height: 36px; width: auto; object-fit: contain; margin: 0 auto 6px; display: block;">
+        <span>Senior Living & Care</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-status">Loading Eleanor's Care Dashboard...</div>
+    </div>
+  </div>
+
+  <!-- MOBILE OVERLAY FOR SIDEBAR -->
+  <div class="mobile-drawer-overlay" id="dashOverlay"></div>
+
+  <div class="dashboard-layout">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar" id="dashSidebar" aria-label="Client Dashboard Navigation">
+      <div class="dashboard-sidebar-header">
+        <a href="index.html" class="brand-logo" aria-label="EverGrace Home" style="color: #ffffff;">
+          <img src="assets/images/logo_0945.webp" alt="EverGrace Care Logo" class="dashboard-logo-img">
+        </a>
+      </div>
+
+      <!-- Senior Overview Snippet -->
+      <div style="padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 12px;">
+        <div style="width: 46px; height: 46px; border-radius: 50%; overflow: hidden; border: 2px solid #38bdf8; flex-shrink: 0;">
+          <img src="assets/images/avatar-senior.webp" alt="Eleanor Vance Senior Patient" width="46" height="46" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="min-width: 0;">
+          <strong style="color: #ffffff; font-size: 0.95rem; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Eleanor Vance</strong>
+          <span style="color: #94a3b8; font-size: 0.75rem;">Age 82 &bull; Memory & Mobility</span>
+        </div>
+      </div>
+
+      <nav class="dashboard-nav">
+        <a href="#overview" class="dashboard-nav-item active">
+          <span><i class="fa-solid fa-chart-pie"></i></span> <span>Daily Overview</span>
+        </a>
+        <a href="#meds" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-pills"></i></span> <span>Medication Log</span>
+        </a>
+        <a href="#vitals" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-stethoscope"></i></span> <span>Vitals Tracking</span>
+        </a>
+        <a href="#carelog" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-file-pen"></i></span> <span>Caregiver Notes</span>
+        </a>
+        <a href="#careteam" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-user-doctor"></i></span> <span>Care Team</span>
+        </a>
+        <a href="#billing" class="dashboard-nav-item">
+          <span><i class="fa-solid fa-credit-card"></i></span> <span>Invoices & Billing</span>
+        </a>
+        <a href="index.html" class="dashboard-nav-item" style="color: #cbd5e1;">
+          <span><i class="fa-solid fa-house"></i></span> <span>Return to Main Site</span>
+        </a>
+      </nav>
+
+      <div class="dashboard-sidebar-footer">
+        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 8px;">Need Immediate Help?</div>
+        <button type="button" onclick="openModal('sosModal')" class="btn btn-sm btn-emergency btn-full"><i class="fa-solid fa-phone"></i> Emergency SOS</button>
+      </div>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT -->
+    <div class="dashboard-main">
+      <!-- TOPBAR -->
+      <header class="dashboard-topbar">
+        <div class="dashboard-topbar-left">
+          <button class="dashboard-menu-toggle" id="dashMenuToggle" aria-label="Toggle Sidebar Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h1 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Family Care Dashboard</h1>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Live updates for <strong>Eleanor Vance</strong> &bull; Oct 13, 2026</span>
+          </div>
+        </div>
+
+        <div class="dashboard-topbar-right">
+          <button type="button" onclick="openModal('bookHoursModal')" class="btn btn-sm btn-accent" style="display: none;">+ Add Hours</button>
+          <div class="user-badge">
+            <div class="user-avatar-small">
+              <img src="assets/images/avatar-client.webp" alt="Sarah Vance Family Account" width="38" height="38" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="display: none;" class="desktop-user-info">
+              <strong style="font-size: 0.85rem; color: var(--secondary); display: block;">Sarah Vance</strong>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Family Guardian</span>
+            </div>
+          </div>
+          <a href="login.html" class="btn btn-sm btn-outline" style="padding: 6px 12px; font-size: 0.8rem;" title="Sign Out"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
+      </header>
+
+      <!-- BODY CONTENT -->
+      <main class="dashboard-body" id="overview">
+        <!-- TOP KPI / STATUS BAR -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #dcfce7; color: #16a34a;"><i class="fa-solid fa-user"></i></div>
+            <div>
+              <div class="kpi-stat">Active</div>
+              <div class="kpi-title">Caregiver On-Duty</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #e0f2fe; color: #0284c7;"><i class="fa-solid fa-stethoscope"></i></div>
+            <div>
+              <div class="kpi-stat">120/78</div>
+              <div class="kpi-title">BP at 08:35 AM</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #fef3c7; color: #d97706;"><i class="fa-solid fa-pills"></i></div>
+            <div>
+              <div class="kpi-stat">2 / 4</div>
+              <div class="kpi-title">Medications Taken</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #f1f5f9; color: var(--secondary);">30 hrs</div>
+            <div>
+              <div class="kpi-stat">$960</div>
+              <div class="kpi-title">Weekly Schedule</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN SPLIT: CAREGIVER ON DUTY & VITALS -->
+        <div class="grid-2" style="margin-bottom: 24px;">
+          <!-- Primary Caregiver Card -->
+          <div class="card" id="careteam">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Caregiver On Duty Today</h2>
+              <span class="status-pill status-active"><i class="fa-solid fa-circle-dot"></i> Arrived 08:30 AM (GPS Verified)</span>
+            </div>
+
+            <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px; flex-wrap: wrap;">
+              <div style="width: 72px; height: 72px; border-radius: 50%; overflow: hidden; border: 3px solid var(--primary-light);">
+                <img src="assets/images/avatar-caregiver.webp" alt="Emma Watson Certified Caregiver" width="72" height="72" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div>
+                <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 2px;">Emma Watson, CNA</h3>
+                <span style="font-size: 0.825rem; color: var(--primary); font-weight: 700;">Certified Dementia Specialist &bull; 6 Yrs Exp</span>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Today's Shift: 08:30 AM – 04:30 PM (8 Hours)</p>
+              </div>
+            </div>
+
+            <div style="background-color: var(--bg-subtle); padding: 12px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); margin-bottom: 16px;">
+              <strong>Caregiver's Morning Note:</strong> "Eleanor had a restful 8-hour sleep. She enjoyed oatmeal with blueberries and is currently doing seated stretches in the living room."
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="tel:5552348990" class="btn btn-sm btn-outline"><i class="fa-solid fa-phone"></i> Call Emma</a>
+              <button type="button" onclick="showToast('Message sent to caregiver Emma Watson!')" class="btn btn-sm btn-outline"><i class="fa-solid fa-comment-dots"></i> Send Quick Note</button>
+              <button type="button" onclick="openModal('bookHoursModal')" class="btn btn-sm btn-primary">+ Extend Hours</button>
+            </div>
+          </div>
+
+          <!-- Vitals Monitor -->
+          <div class="card" id="vitals">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Vital Signs (Automated Sync)</h2>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Sync: 08:35 AM</span>
+            </div>
+
+            <div class="vitals-grid">
+              <div class="vital-box">
+                <div class="vital-value" style="color: #15803d;">120/78</div>
+                <div class="vital-label">Blood Pressure</div>
+                <span class="status-pill status-active" style="font-size: 0.65rem; margin-top: 4px;">Optimal</span>
+              </div>
+              <div class="vital-box">
+                <div class="vital-value" style="color: #0369a1;">72</div>
+                <div class="vital-label">Heart Rate (BPM)</div>
+                <span class="status-pill status-completed" style="font-size: 0.65rem; margin-top: 4px;">Resting</span>
+              </div>
+              <div class="vital-box">
+                <div class="vital-value" style="color: #b45309;">104</div>
+                <div class="vital-label">Blood Glucose (mg/dL)</div>
+                <span class="status-pill status-pending" style="font-size: 0.65rem; margin-top: 4px;">Fasting</span>
+              </div>
+              <div class="vital-box">
+                <div class="vital-value" style="color: #15803d;">98%</div>
+                <div class="vital-label">SpO2 Oxygen</div>
+                <span class="status-pill status-active" style="font-size: 0.65rem; margin-top: 4px;">Normal</span>
+              </div>
+            </div>
+
+            <div style="font-size: 0.8rem; color: var(--text-muted); padding: 10px; background: #f8fafc; border-radius: 8px;">
+              <i class="fa-solid fa-shield-halved"></i> Next scheduled RN clinical review with <strong>David Mitchell, BSN</strong> on Thursday, Oct 16.
+            </div>
+          </div>
+        </div>
+
+        <!-- MEDICATION TRACKER & DAILY JOURNAL -->
+        <div class="grid-2" style="margin-bottom: 24px;">
+          <!-- Medication Tracker -->
+          <div class="card" id="meds">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Today's Medications</h2>
+              <span class="badge-pill badge-accent" style="margin: 0;">Supervised by CNA</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Medication & Dose</th>
+                    <th>Instructions</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="opacity: 0.65;">
+                    <td><strong>08:00 AM</strong></td>
+                    <td>Lisinopril 10mg</td>
+                    <td>With water & breakfast</td>
+                    <td><span class="status-pill status-active"><i class="fa-solid fa-check"></i> Taken</span></td>
+                  </tr>
+                  <tr style="opacity: 0.65;">
+                    <td><strong>12:30 PM</strong></td>
+                    <td>Donepezil 5mg</td>
+                    <td>Post lunch</td>
+                    <td><span class="status-pill status-active"><i class="fa-solid fa-check"></i> Taken</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>06:00 PM</strong></td>
+                    <td>Calcium + Vit D3</td>
+                    <td>With evening dinner</td>
+                    <td>
+                      <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                        <input type="checkbox" class="med-checkbox" style="accent-color: var(--primary);">
+                        <span style="font-size: 0.8rem; font-weight: 700; color: #b45309;">Pending</span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>09:00 PM</strong></td>
+                    <td>Melatonin 3mg</td>
+                    <td>30m before bed</td>
+                    <td>
+                      <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                        <input type="checkbox" class="med-checkbox" style="accent-color: var(--primary);">
+                        <span style="font-size: 0.8rem; font-weight: 700; color: #b45309;">Pending</span>
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Caregiver Daily Activity Journal -->
+          <div class="card" id="carelog">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Caregiver Live Journal</h2>
+              <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-clock"></i> Today's Entries</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; gap: 12px; font-size: 0.85rem; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+                <span style="font-weight: 800; color: var(--primary); white-space: nowrap;">08:30 AM</span>
+                <div>
+                  <strong>Arrival & Morning Vitals</strong>
+                  <p style="color: var(--text-muted); margin: 2px 0 0;">Checked in via GPS app. Assisted with warm sponge bath, dressed in lavender sweater. BP 120/78.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; font-size: 0.85rem; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+                <span style="font-weight: 800; color: var(--primary); white-space: nowrap;">10:15 AM</span>
+                <div>
+                  <strong>Physical Balance & Garden Walk</strong>
+                  <p style="color: var(--text-muted); margin: 2px 0 0;">15 minutes of guided chair stretches followed by an escorted walk around the back garden. Eleanor enjoyed the roses.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; font-size: 0.85rem; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+                <span style="font-weight: 800; color: var(--primary); white-space: nowrap;">12:30 PM</span>
+                <div>
+                  <strong>Lunch & Hydration Check</strong>
+                  <p style="color: var(--text-muted); margin: 2px 0 0;">Prepared grilled salmon, steamed broccoli, and baked potato. Eleanor ate 90% and drank 2 full glasses of water.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; font-size: 0.85rem;">
+                <span style="font-weight: 800; color: var(--primary); white-space: nowrap;">02:30 PM</span>
+                <div>
+                  <strong>Water Color Painting & Music</strong>
+                  <p style="color: var(--text-muted); margin: 2px 0 0;">Engaged with 1950s jazz playlist while painting floral scenery. Very relaxed mood, zero agitation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECENT BILLING & INVOICE CARD -->
+        <div class="card" id="billing" style="margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <h2 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Recent Care Invoices</h2>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Direct billing to Mutual of Omaha Long-Term Care Insurance</span>
+            </div>
+            <a href="404.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Download Statement</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Invoice ID</th>
+                  <th>Period</th>
+                  <th>Hours Delivered</th>
+                  <th>Total Amount</th>
+                  <th>Insurance Status</th>
+                  <th>Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#INV-2026-881</strong></td>
+                  <td>Oct 01 – Oct 07, 2026</td>
+                  <td>30.0 Hours</td>
+                  <td>$960.00</td>
+                  <td><span class="status-pill status-active"><i class="fa-solid fa-check"></i> Paid by LTC Ins.</span></td>
+                  <td><a href="404.html" style="font-weight: 700; color: var(--primary);">View PDF</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-842</strong></td>
+                  <td>Sep 24 – Sep 30, 2026</td>
+                  <td>30.0 Hours</td>
+                  <td>$960.00</td>
+                  <td><span class="status-pill status-active"><i class="fa-solid fa-check"></i> Paid by LTC Ins.</span></td>
+                  <td><a href="404.html" style="font-weight: 700; color: var(--primary);">View PDF</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL 1: EMERGENCY SOS POPUP -->
+  <div class="modal-overlay" id="sosModal" role="dialog" aria-modal="true">
+    <div class="modal-box" style="border-top: 6px solid var(--emergency);">
+      <div class="modal-header">
+        <h3 style="color: var(--emergency); font-size: 1.25rem;"><i class="fa-solid fa-triangle-exclamation"></i> Emergency SOS Crisis Hotline</h3>
+        <button class="modal-close-btn" onclick="closeModal('sosModal')">&times;</button>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 20px;">
+        If this is an immediate life-threatening crisis, dial <strong>911</strong> immediately. For urgent on-call nurse dispatch or immediate backup caregiver arrival:
+      </p>
+      <div style="background: var(--emergency-light); padding: 16px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+        <div style="font-size: 0.85rem; color: #991b1b; font-weight: 700;">24/7 ON-CALL CLINICAL HOTLINE:</div>
+        <div style="font-size: 1.75rem; font-weight: 800; color: var(--emergency);">1-800-CARE-NOW</div>
+        <span style="font-size: 0.75rem; color: #991b1b;">Direct connection to Nurse David Mitchell, RN</span>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <a href="tel:18002273669" class="btn btn-emergency btn-full"><i class="fa-solid fa-phone"></i> Call Hotline Now</a>
+        <button type="button" class="btn btn-outline btn-full" onclick="closeModal('sosModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: BOOK MORE CARE HOURS -->
+  <div class="modal-overlay" id="bookHoursModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="color: var(--secondary); font-size: 1.2rem;"><i class="fa-solid fa-calendar-plus"></i> Request Additional Care Hours</h3>
+        <button class="modal-close-btn" onclick="closeModal('bookHoursModal')">&times;</button>
+      </div>
+      <form data-toast="Schedule update request sent! Assigned to Emma Watson." onsubmit="closeModal('bookHoursModal');">
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label>Target Date:</label>
+          <input type="date" class="form-control" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label>Additional Hours Needed:</label>
+          <select class="form-control">
+            <option value="2">+2 Hours (Evening Coverage)</option>
+            <option value="4">+4 Hours (Half Day Extension)</option>
+            <option value="8">+8 Hours (Full Extra Day)</option>
+            <option value="overnight">Overnight Stay (10:00 PM – 06:00 AM)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 20px;">
+          <label>Special Instructions for Emma:</label>
+          <textarea class="form-control" rows="2" placeholder="e.g. Doctor appointment escort at 3 PM..."></textarea>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="submit" class="btn btn-primary btn-full">Confirm Extra Hours</button>
+          <button type="button" class="btn btn-outline" onclick="closeModal('bookHoursModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

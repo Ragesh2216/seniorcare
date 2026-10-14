@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Register Family Portal Account | EverGrace Senior Care</title>
+  <meta name="description" content="Create a family care portal account to monitor daily caregiver notes, vital signs, medication logs, and billing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="background: #f8fafc;">
+
+  <!-- PRELOADER (1.5s Animation) -->
+  <div id="preloader" class="preloader" aria-label="Loading EverGrace Senior Care">
+    <div class="preloader-content">
+      <div class="preloader-heart">
+        <div class="heart-pulse"><i class="fa-solid fa-heart"></i></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring ring-2"></div>
+      </div>
+      <div class="preloader-brand">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Care" style="height: 36px; width: auto; object-fit: contain; margin: 0 auto 6px; display: block;">
+        <span>Senior Living & Care</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-status">Preparing Registration Portal...</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-inner" style="display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" class="brand-logo" aria-label="EverGrace Home">
+        <img src="assets/images/logo_0945.webp" alt="EverGrace Senior Care Logo" class="brand-logo-img">
+      </a>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <button type="button" onclick="if(window.history.length > 1){window.history.back();}else{window.location.href='index.html';}" class="btn btn-sm btn-outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; font-weight: 600;">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <div style="font-size: 0.9rem;" class="auth-nav-switch">
+          Already registered? <a href="login.html" style="font-weight: 700; color: var(--primary);">Sign In &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-wrapper">
+    <div class="auth-card" style="max-width: 540px;">
+      <!-- Card Top Navigation: Back & Home -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <button type="button" onclick="if(window.history.length > 1){window.history.back();}else{window.location.href='index.html';}" class="btn btn-sm btn-outline" style="border-radius: var(--radius-full); padding: 5px 14px; font-size: 0.825rem; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <a href="index.html" style="font-size: 0.825rem; color: var(--text-muted); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+          <i class="fa-solid fa-house"></i> Home
+        </a>
+      </div>
+      <div class="auth-header">
+        <div class="brand-logo-icon" style="margin: 0 auto 12px; width: 48px; height: 48px; font-size: 1.5rem; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-users"></i></div>
+        <h1 style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 6px;">Register Family Portal</h1>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Stay connected to your loved one's daily care, vitals, and caregiver updates.</p>
+      </div>
+
+      <!-- Trust Image Banner -->
+      <div style="border-radius: 12px; overflow: hidden; margin-bottom: 20px; aspect-ratio: 16/6; background: #e2e8f0;">
+        <img src="assets/images/avatar-caregiver.webp" alt="Caregiver with senior patient" width="550" height="206" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <form id="signupForm" class="auth-form">
+        <div class="form-group">
+          <label for="accType">Account Purpose:</label>
+          <select id="accType" class="form-control" required>
+            <option value="family" selected>Family Member / Guardian Managing Senior Care</option>
+            <option value="caregiver">Caregiver / Nurse Employment Registration</option>
+            <option value="senior">I am the Senior Living Autonomously</option>
+          </select>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="regName">Your Full Name *</label>
+            <input type="text" id="regName" class="form-control" placeholder="Sarah Vance" required>
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Mobile Phone *</label>
+            <input type="tel" id="regPhone" class="form-control" placeholder="(555) 234-8990" required>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="regEmail">Email Address *</label>
+            <input type="email" id="regEmail" class="form-control" placeholder="sarah@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password *</label>
+            <input type="password" id="regPassword" class="form-control" placeholder="At least 8 characters" required>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="seniorName">Senior's Full Name *</label>
+            <input type="text" id="seniorName" class="form-control" placeholder="Eleanor Vance" required>
+          </div>
+          <div class="form-group">
+            <label for="seniorAge">Senior's Age</label>
+            <input type="number" id="seniorAge" class="form-control" placeholder="82" min="50" max="115" value="82">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regService">Primary Care Focus</label>
+          <select id="regService" class="form-control">
+            <option value="memory">Alzheimer's / Dementia Memory Care</option>
+            <option value="inhome" selected>24/7 Skilled In-Home Nursing</option>
+            <option value="companion">Companion & Homemaking Support</option>
+            <option value="rehab">Post-Hospital Mobility Rehabilitation</option>
+          </select>
+        </div>
+
+        <div class="auth-options">
+          <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.825rem; cursor: pointer;">
+            <input type="checkbox" required checked style="margin-top: 3px; accent-color: var(--primary);">
+            <span>I agree to the <a href="404.html">Terms of Care</a> and acknowledge HIPAA patient medical privacy compliance.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg"><i class="fa-solid fa-user-plus"></i> Create Portal Account &rarr;</button>
+      </form>
+
+      <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">
+        Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 700;">Sign In here</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background: #0f172a; color: #94a3b8; padding: 28px 0; text-align: center; font-size: 0.8rem;">
+    <div class="container">
+      <div style="margin-bottom: 14px;">
+        <a href="index.html" aria-label="Home" style="display: inline-block;">
+          <img src="assets/images/logo_0945.webp" alt="Stackly Senior Care Logo" class="footer-logo-img" style="height: 38px; margin: 0 auto;">
+        </a>
+      </div>
+      <div style="margin-bottom: 8px;">
+        <span>Salem Stackly Office &bull; <a href="tel:+919876543210" style="color: #cbd5e1;">+91 9876543210</a> &bull; <a href="mailto:info@stackly.com" style="color: #cbd5e1;">info@stackly.com</a></span>
+      </div>
+      <div>&copy; 2026 Stackly Senior Care LLC. All rights reserved. &bull; <a href="index.html" style="color: #cbd5e1;">Return to Home</a> &bull; <a href="404.html" style="color: #cbd5e1;">Privacy Policy</a> &bull; <a href="404.html" style="color: #cbd5e1;">Terms of Service</a></div>
+      <div style="display: flex; justify-content: center; gap: 14px; margin-top: 10px;">
+        <a href="404.html" aria-label="Facebook" class="footer-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html" aria-label="LinkedIn" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="404.html" aria-label="Instagram" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Registration successful! Redirecting to your family dashboard...');
+      setTimeout(() => {
+        window.location.href = 'dashboard-client.html';
+      }, 800);
+    });
+  </script>
+</body>
+</html>
