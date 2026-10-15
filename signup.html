@@ -71,7 +71,7 @@
         <img src="assets/images/avatar-caregiver.webp" alt="Caregiver with senior patient" width="550" height="206" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
 
-      <form id="signupForm" class="auth-form">
+      <form id="signupForm" class="auth-form" action="login.html">
         <div class="form-group">
           <label for="accType">Account Purpose:</label>
           <select id="accType" class="form-control" required>
@@ -163,10 +163,14 @@
   <script>
     document.getElementById('signupForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast('Registration successful! Redirecting to your family dashboard...');
+      const email = document.getElementById('regEmail')?.value;
+      if (email) {
+        sessionStorage.setItem('registeredEmail', email);
+      }
+      showToast('Registration successful! Moving to login page...');
       setTimeout(() => {
-        window.location.href = 'dashboard-client.html';
-      }, 800);
+        window.location.href = 'login.html?registered=true';
+      }, 700);
     });
   </script>
 </body>

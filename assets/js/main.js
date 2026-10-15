@@ -110,19 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.getElementById('mobileNavToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const drawerOverlay = document.getElementById('drawerOverlay');
+  const mobileDrawerClose = document.getElementById('mobileDrawerClose');
 
-  if (mobileToggle && mobileDrawer && drawerOverlay) {
+  if (mobileToggle && mobileDrawer) {
     const toggleMenu = () => {
       const isOpen = mobileDrawer.classList.contains('open');
       mobileDrawer.classList.toggle('open', !isOpen);
-      drawerOverlay.classList.toggle('open', !isOpen);
+      if (drawerOverlay) drawerOverlay.classList.toggle('open', !isOpen);
       mobileToggle.classList.toggle('open', !isOpen);
       mobileToggle.setAttribute('aria-expanded', !isOpen);
       document.body.style.overflow = isOpen ? '' : 'hidden';
     };
 
     mobileToggle.addEventListener('click', toggleMenu);
-    drawerOverlay.addEventListener('click', toggleMenu);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', toggleMenu);
+    if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', toggleMenu);
 
     const mobileLinks = mobileDrawer.querySelectorAll('a');
     mobileLinks.forEach(link => {
@@ -131,6 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
           toggleMenu();
         }
       });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        toggleMenu();
+      }
     });
   }
 
@@ -269,17 +277,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const dashMenuBtn = document.getElementById('dashMenuToggle');
   const dashSidebar = document.getElementById('dashSidebar');
   const dashOverlay = document.getElementById('dashOverlay');
+  const dashCloseBtn = document.getElementById('dashCloseBtn');
 
-  if (dashMenuBtn && dashSidebar) {
+  if (dashSidebar) {
     const toggleDashSidebar = () => {
-      dashSidebar.classList.toggle('open');
-      if (dashOverlay) dashOverlay.classList.toggle('open');
+      const isOpen = dashSidebar.classList.contains('open');
+      dashSidebar.classList.toggle('open', !isOpen);
+      if (dashOverlay) dashOverlay.classList.toggle('open', !isOpen);
+      document.body.style.overflow = (!isOpen && window.innerWidth <= 768) ? 'hidden' : '';
     };
 
-    dashMenuBtn.addEventListener('click', toggleDashSidebar);
-    if (dashOverlay) {
-      dashOverlay.addEventListener('click', toggleDashSidebar);
-    }
+    if (dashMenuBtn) dashMenuBtn.addEventListener('click', toggleDashSidebar);
+    if (dashOverlay) dashOverlay.addEventListener('click', toggleDashSidebar);
+    if (dashCloseBtn) dashCloseBtn.addEventListener('click', toggleDashSidebar);
+
+    // Auto-close on link click on mobile
+    const dashLinks = dashSidebar.querySelectorAll('.dashboard-nav a, .dashboard-sidebar-header a');
+    dashLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 991 && dashSidebar.classList.contains('open')) {
+          toggleDashSidebar();
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dashSidebar.classList.contains('open')) {
+        toggleDashSidebar();
+      }
+    });
   }
 
   // 11. MEDICATION CHECKBOX INTERACTION

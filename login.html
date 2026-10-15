@@ -187,6 +187,19 @@
         }
       }, 700);
     });
+
+    // Check if redirected from sign up page
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('registered') === 'true') {
+      const regEmail = sessionStorage.getItem('registeredEmail');
+      if (regEmail && loginEmail) {
+        loginEmail.value = regEmail;
+        loginPassword.value = '';
+      }
+      setTimeout(() => {
+        showToast('Registration complete! Please enter your password to sign in.');
+      }, 300);
+    }
   </script>
 </body>
 </html>

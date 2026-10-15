@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -65,12 +65,15 @@
 
   <!-- MOBILE DRAWER -->
   <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
-  <aside class="mobile-drawer" id="mobileDrawer">
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
     <div>
-      <div style="margin-bottom: 24px;">
+      <div class="mobile-drawer-header">
         <a href="index.html" aria-label="EverGrace Home" style="display: inline-block;">
-          <img src="assets/images/logo_0945.webp" alt="EverGrace Senior Care Logo" class="brand-logo-img" style="height: 40px;">
+          <img src="assets/images/logo_0945.webp" alt="EverGrace Senior Care Logo" class="brand-logo-img">
         </a>
+        <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
       <nav class="mobile-nav-links">
         <a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a>
