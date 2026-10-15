@@ -99,16 +99,23 @@
           <button class="dashboard-menu-toggle" id="dashMenuToggle" aria-label="Toggle Sidebar Menu">
             <i class="fa-solid fa-bars"></i>
           </button>
-          <div>
-            <h1 style="font-size: 1.15rem; color: var(--secondary); margin: 0;">Clinical Operations & Dispatch Console</h1>
-            <span style="font-size: 0.75rem; color: var(--text-muted);">Real-time monitoring across Metro Central & Suburban hubs</span>
+          <div class="dash-title-wrap">
+            <h1 class="dash-topbar-title">
+              <span class="dash-title-main">Clinical Operations</span>
+              <span class="dash-title-sub"> &amp; Dispatch Console</span>
+            </h1>
+            <span class="dash-topbar-subtitle">Real-time monitoring across Metro Central &amp; Suburban hubs</span>
           </div>
         </div>
 
         <div class="dashboard-topbar-right">
-          <button type="button" onclick="openModal('newIntakeModal')" class="btn btn-sm btn-primary">+ New Client Intake</button>
+          <button type="button" onclick="openModal('newIntakeModal')" class="btn btn-sm btn-primary dash-intake-btn" title="New Client Intake">
+            <i class="fa-solid fa-plus"></i> <span class="intake-btn-text">New Intake</span>
+          </button>
           <div class="user-badge">
-            <span class="status-pill status-urgent" style="font-size: 0.75rem; cursor: pointer;" onclick="document.getElementById('alerts').scrollIntoView();"><i class="fa-solid fa-triangle-exclamation"></i> 2 Alerts</span>
+            <span class="status-pill status-urgent topbar-alert-pill" style="font-size: 0.75rem; cursor: pointer;" onclick="document.getElementById('alerts').scrollIntoView();" title="2 Active Alerts">
+              <i class="fa-solid fa-triangle-exclamation"></i> <span class="alert-pill-text">2 Alerts</span>
+            </span>
             <div class="user-avatar-small">
               <img src="assets/images/avatar-admin.webp" alt="Admin Profile" width="38" height="38" style="width: 100%; height: 100%; object-fit: cover;">
             </div>

@@ -2301,21 +2301,22 @@ button, input, select, textarea {
 .dashboard-topbar {
   background-color: #ffffff;
   border-bottom: 1px solid var(--border-color);
-  padding: 12px 14px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
   position: sticky;
   top: 0;
   z-index: 900;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .dashboard-topbar {
     padding: 16px 28px;
-    flex-wrap: nowrap;
     gap: 16px;
   }
 }
@@ -2326,6 +2327,34 @@ button, input, select, textarea {
   gap: 10px;
   min-width: 0;
   flex: 1;
+  overflow: hidden;
+}
+
+.dash-title-wrap {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.dash-topbar-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin: 0;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-topbar-subtitle {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
 }
 
 .dashboard-menu-toggle {
@@ -2350,7 +2379,15 @@ button, input, select, textarea {
 .dashboard-topbar-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dash-intake-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
@@ -2358,6 +2395,7 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .user-avatar-small {
@@ -2366,6 +2404,42 @@ button, input, select, textarea {
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
+}
+
+/* Responsive adjustments for Topbar on Tablets and Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .dashboard-topbar {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .dashboard-topbar-left {
+    gap: 8px;
+  }
+  .dash-topbar-title {
+    font-size: 0.95rem;
+  }
+  .dash-title-sub {
+    display: none !important;
+  }
+  .dash-topbar-subtitle {
+    display: none !important;
+  }
+  .dashboard-topbar-left span {
+    display: none !important;
+  }
+  .intake-btn-text {
+    display: none !important;
+  }
+  .dash-intake-btn {
+    padding: 6px 10px;
+    font-size: 0.825rem;
+  }
+  .topbar-alert-pill .alert-pill-text {
+    display: none !important;
+  }
+  .topbar-alert-pill {
+    padding: 6px 8px;
+  }
 }
 
 .dashboard-body {
@@ -2676,21 +2750,36 @@ button, input, select, textarea {
   }
 
   .dashboard-topbar {
-    padding: 10px 12px;
+    padding: 8px 10px;
+    gap: 6px;
   }
-  .dashboard-topbar-left span {
-    display: none;
+  .dashboard-topbar-left {
+    gap: 6px;
   }
-  .dashboard-topbar-left h1 {
-    font-size: 0.95rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 160px;
+  .dash-topbar-title {
+    font-size: 0.88rem;
+    max-width: 100%;
   }
-  .dashboard-topbar-right .btn {
-    padding: 6px 10px;
-    font-size: 0.78rem;
+  .dashboard-menu-toggle {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+  .user-avatar-small {
+    width: 32px;
+    height: 32px;
+  }
+  .dash-intake-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .topbar-alert-pill {
+    padding: 5px 6px;
+    font-size: 0.72rem;
   }
   .auth-card {
     padding: 22px 14px;
@@ -2780,6 +2869,20 @@ button, input, select, textarea {
 
   .dashboard-sidebar-header {
     padding: 12px 14px;
+  }
+
+  .dashboard-topbar {
+    padding: 8px 8px;
+    gap: 5px;
+  }
+  .dashboard-topbar-left {
+    gap: 5px;
+  }
+  .dash-topbar-title {
+    font-size: 0.825rem;
+  }
+  .topbar-alert-pill {
+    display: none !important;
   }
 }
 
